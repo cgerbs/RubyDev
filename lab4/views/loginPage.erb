@@ -1,0 +1,13 @@
+<h1>Login</h1>
+
+<%# <%if @existing_user%> 
+<form action="/loginPage" method="post">
+    user: <input type="text" name="username" /><br />
+    pwd: <input type="password" name="password" /><br />
+    <input type="submit" name="submit" />
+</form>
+<%# <%end%> 
+
+<% if  @wrongUserPwd%>
+<p>Incorrect username/password.</p>
+<% end %>

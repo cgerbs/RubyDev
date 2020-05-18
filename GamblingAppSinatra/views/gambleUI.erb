@@ -1,0 +1,35 @@
+
+
+
+<div id = "fullpage">
+  <form action="/logout" method = 'post'>
+    <input type="submit" value="Logout" />
+</form>
+  <div id = 'upper'>
+    <div id = "leftForm" class = "upperPart">
+      <h4><%= @user.username %>, you are betting the roll of a dice!</h4>
+
+      <form id='betForm' action="/bet" method='post'>
+        Bet money: <input type='text' name='money'></input><br>
+        On # (1-6): <input type='text' name='number'></input><br>
+        <br>
+        <input type='submit' name='betButton' value ='Bet!'></input>
+      </form>
+    </div>
+
+    <div id = rightForm class = "upperPart">
+      total win: <output form="betForm" id="sessionWinnings" name="sessionWinnings"><%= @sesWinnings  %></output><br>
+      total loss: <output form="betForm" id="sessionLosings" name="sessionLosings"> <%= @sesLosings%></output><br>
+      total profit: <output form="betForm" id="sessionProfit" name="sessionProfit"><%= @sesProfit %></output><br>
+    </div>
+  </div>
+
+  <div id = "bottomForm" class = "lowerPart">
+    <div id = rightForm class = "upperPart">
+      total win: <output form="betForm" id="sessionWinnings" name="sessionWinnings"><%= @user.totalWinnings%></output><br>
+      total loss: <output form="betForm" id="sessionLosings" name="sessionLosings"> <%= @user.totalLosings %></output><br>
+      total profit: <output form="betForm" id="sessionProfit" name="sessionProfit"><%= @user.totalProfit%></output><br>
+    </div>
+
+  </div>
+</div>

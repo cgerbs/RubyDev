@@ -1,0 +1,10 @@
+<h1>Student Lists:</h1>
+<ul>
+<% @studentList.each do |singleStudent| %>
+<li><%= "name ##{singleStudent.id}:  #{singleStudent.firstname}"%></li>
+<p><%= "email ##{singleStudent.id}:  #{singleStudent.email}"%></p>
+<p><%="Profile Picture # #{singleStudent.id}:"%></p>
+<img src = <%= singleStudent.photo %>>
+<br>
+<% end %>
+</ul>

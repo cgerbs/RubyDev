@@ -1,0 +1,13 @@
+<html>
+    <head>
+    <title><%=@page%></title>
+    </head>
+    <body>
+        <% if @existing_user %>
+            <p>Hello <%= @name %>, welcome back! You have visited here <%= @numberOfVisits %> times.</p>
+            <a href="/logoutPage">Logout</a>
+        <% end %>
+
+        <%= yield %>
+    </body>
+</html>
