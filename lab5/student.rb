@@ -18,7 +18,7 @@ class Student
   property :firstname, Text
   property :lastname, Text
   property :studentID, Integer
-  property :email, Text 
+  property :email, Text
   property :dateOfBirth, Date
   property :yearOfGraduation, Integer
   property :photo, Text
@@ -26,43 +26,40 @@ end
 
 DataMapper.finalize
 
-get '/' do 
+get '/' do
   @studentList = Student.all # query 'Student' db table
-  erb :displayResults 
+  erb :displayResults
 end
 
-
 #open terminals
-  #irb & sqlite3
+#irb & sqlite3
 #irb
-  #require_relative 'student'
-  #Student.auto_mirgrate!
+#require_relative 'student'
+#Student.auto_mirgrate!
 #sqlite3
-  #sqlite3 student.db
-  #.table
-  #select * from students;
+#sqlite3 student.db
+#.table
+#select * from students;
 #irb
-  #std = Student.new
-  #std.save
+#std = Student.new
+#std.save
 
 #sqlite
-  #select * from students; should now return |1||||
+#select * from students; should now return |1||||
 
 #list all students
-  # Student.all
+# Student.all
 
 #return first student
-  # Student.first
+# Student.first
 #return student with id = 2
-  # Student.get(2)
+# Student.get(2)
 
 #update first student
-  # Student.first.update(name: "Christopher")
+# Student.first.update(name: "Christopher")
 
 #delete student with id = 4
-  # Student.get(4).destroy
-
-
+# Student.get(4).destroy
 
 # Student.create(firstname: "chris", lastname: "gerbino", studentID: 1234567, email: "me@gmail.com", dateOfBirth: Date.new(1998), yearOfGraduation: 2021 , photo: "https://images.unsplash.com/photo-1494253109108-2e30c049369b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80")
 # Student.create(firstname: "sam", lastname: "zxcv", studentID: 234553, email: "same@gmail.com", dateOfBirth: Date.new(1998), yearOfGraduation: 2021 , photo: "https://images.unsplash.com/photo-1494253109108-2e30c049369b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80")
