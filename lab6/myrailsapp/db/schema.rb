@@ -11,10 +11,8 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2020_05_20_152810) do
-
-  create_table "assignments", force: :cascade do |t|
-    t.string "description"
-    t.integer "completion_time"
+  create_table 'assignments', force: :cascade do |t|
+    t.string 'description'
+    t.integer 'completion_time'
   end
-
 end

@@ -1,3 +1,3 @@
 class RootController < ApplicationController
-  def hompage; end
+  def homepage; end
 end
