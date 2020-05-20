@@ -1,6 +1,10 @@
 <h1>Newhome#page2</h1>
 <p>Find me in app/views/newhome/page2.html.erb</p>
-
 <h1>Hello this is msg is from 'page2.html.erb'!</h1>
 <p>It is <%= @time2 %> now on page 2</p>
-<a href ="./page1">page2</a>
+<%# <a href ="./page1">page2</a> %>
+<%# there is a better way for me to link to page1... done below %>
+<%= link_to "page1", newhome_page1_path %>
+<%# partial files are use a "_" before the name of the file %>
+<%= render partial: "footer", locals: {start_year: 2021} %>
+<p><i>note: this was done in part_6.2</i></p>

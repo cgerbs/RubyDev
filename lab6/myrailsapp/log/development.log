@@ -714,3 +714,421 @@ Processing by NewhomeController#page1 as HTML
 Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms | Allocations: 4993)
 
 
+Started GET "/" for ::1 at 2020-05-19 21:35:23 -0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+AbstractController::ActionNotFound (The action 'homepage' could not be found for RootController):
+  
+actionpack (6.0.3.1) lib/abstract_controller/base.rb:131:in `process'
+actionview (6.0.3.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.1) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.1) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.4) lib/puma/configuration.rb:228:in `call'
+puma (4.3.4) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.4) lib/puma/server.rb:472:in `process_client'
+puma (4.3.4) lib/puma/server.rb:328:in `block in run'
+puma (4.3.4) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/newhome/page1" for ::1 at 2020-05-19 21:35:40 -0700
+Processing by NewhomeController#page1 as HTML
+  Rendering newhome/page1.html.erb within layouts/application
+  Rendered newhome/_footer.html.erb (Duration: 1.3ms | Allocations: 1510)
+  Rendered newhome/page1.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1954)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 3263)
+
+
+  
+ActionView::Template::Error (undefined method `today' for nil:NilClass):
+    1: <br>
+    2:     <p>Copyright <%= "#{start_year}" if defined? start_year %> - <%= @Date.today.year %>MyCode</p>  
+  
+app/views/newhome/_footer.html.erb:2
+app/views/newhome/page1.html.erb:8
+Started GET "/newhome/page1" for ::1 at 2020-05-19 21:37:41 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by NewhomeController#page1 as HTML
+  Rendering newhome/page1.html.erb within layouts/application
+  Rendered newhome/_footer.html.erb (Duration: 0.3ms | Allocations: 127)
+  Rendered newhome/page1.html.erb within layouts/application (Duration: 1.1ms | Allocations: 541)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 16.8ms | ActiveRecord: 0.0ms | Allocations: 7747)
+
+
+Started GET "/newhome/page1" for ::1 at 2020-05-19 21:38:20 -0700
+Processing by NewhomeController#page1 as HTML
+  Rendering newhome/page1.html.erb within layouts/application
+  Rendered newhome/_footer.html.erb (Duration: 0.3ms | Allocations: 129)
+  Rendered newhome/page1.html.erb within layouts/application (Duration: 1.2ms | Allocations: 534)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 5407)
+
+
+Started GET "/newhome/page1" for ::1 at 2020-05-19 21:39:29 -0700
+Processing by NewhomeController#page1 as HTML
+  Rendering newhome/page1.html.erb within layouts/application
+  Rendered newhome/_footer.html.erb (Duration: 0.3ms | Allocations: 131)
+  Rendered newhome/page1.html.erb within layouts/application (Duration: 1.1ms | Allocations: 542)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.0ms | Allocations: 5420)
+
+
+Started GET "/newhome/page1" for ::1 at 2020-05-19 21:40:23 -0700
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by NewhomeController#page1 as HTML
+  Rendering newhome/page1.html.erb within layouts/application
+  Rendered newhome/_footer.html.erb (Duration: 0.3ms | Allocations: 158)
+  Rendered newhome/page1.html.erb within layouts/application (Duration: 1.7ms | Allocations: 853)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 16.0ms | ActiveRecord: 0.0ms | Allocations: 9572)
+
+
+Started GET "/newhome/page2" for ::1 at 2020-05-19 21:40:24 -0700
+Processing by NewhomeController#page2 as HTML
+  Rendering newhome/page2.html.erb within layouts/application
+  Rendered newhome/page2.html.erb within layouts/application (Duration: 0.4ms | Allocations: 116)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 4188)
+
+
+Started GET "/newhome/page2" for ::1 at 2020-05-19 21:43:17 -0700
+Processing by NewhomeController#page2 as HTML
+  Rendering newhome/page2.html.erb within layouts/application
+  Rendered newhome/_footer.html.erb (Duration: 0.3ms | Allocations: 130)
+  Rendered newhome/page2.html.erb within layouts/application (Duration: 1.1ms | Allocations: 560)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.0ms | Allocations: 5449)
+
+
+Started GET "/newhome/page1" for ::1 at 2020-05-19 21:44:31 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by NewhomeController#page1 as HTML
+  Rendering newhome/page1.html.erb within layouts/application
+  Rendered newhome/_footer.html.erb (Duration: 0.3ms | Allocations: 130)
+  Rendered newhome/page1.html.erb within layouts/application (Duration: 1.1ms | Allocations: 549)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 5391)
+
+
+Started GET "/newhome/page2" for ::1 at 2020-05-19 21:44:32 -0700
+Processing by NewhomeController#page2 as HTML
+  Rendering newhome/page2.html.erb within layouts/application
+  Rendered newhome/_footer.html.erb (Duration: 0.0ms | Allocations: 12)
+  Rendered newhome/page2.html.erb within layouts/application (Duration: 0.6ms | Allocations: 296)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.0ms | Allocations: 4367)
+
+
+Started GET "/newhome/page1" for ::1 at 2020-05-19 21:44:32 -0700
+Processing by NewhomeController#page1 as HTML
+  Rendering newhome/page1.html.erb within layouts/application
+  Rendered newhome/_footer.html.erb (Duration: 0.0ms | Allocations: 12)
+  Rendered newhome/page1.html.erb within layouts/application (Duration: 0.3ms | Allocations: 115)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms | Allocations: 4036)
+
+
+Started GET "/newhome/page2" for ::1 at 2020-05-19 21:44:33 -0700
+Processing by NewhomeController#page2 as HTML
+  Rendering newhome/page2.html.erb within layouts/application
+  Rendered newhome/_footer.html.erb (Duration: 0.0ms | Allocations: 12)
+  Rendered newhome/page2.html.erb within layouts/application (Duration: 0.3ms | Allocations: 114)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms | Allocations: 4034)
+
+
+Started GET "/newhome/page1" for ::1 at 2020-05-19 21:44:33 -0700
+Processing by NewhomeController#page1 as HTML
+  Rendering newhome/page1.html.erb within layouts/application
+  Rendered newhome/_footer.html.erb (Duration: 0.0ms | Allocations: 12)
+  Rendered newhome/page1.html.erb within layouts/application (Duration: 0.3ms | Allocations: 114)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms | Allocations: 4028)
+
+
+Started GET "/newhome/page2" for ::1 at 2020-05-19 21:44:33 -0700
+Processing by NewhomeController#page2 as HTML
+  Rendering newhome/page2.html.erb within layouts/application
+  Rendered newhome/_footer.html.erb (Duration: 0.0ms | Allocations: 12)
+  Rendered newhome/page2.html.erb within layouts/application (Duration: 0.3ms | Allocations: 114)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms | Allocations: 4032)
+
+
+Started GET "/newhome/page1" for ::1 at 2020-05-19 21:44:34 -0700
+Processing by NewhomeController#page1 as HTML
+  Rendering newhome/page1.html.erb within layouts/application
+  Rendered newhome/_footer.html.erb (Duration: 0.0ms | Allocations: 12)
+  Rendered newhome/page1.html.erb within layouts/application (Duration: 0.3ms | Allocations: 114)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms | Allocations: 4033)
+
+
+Started GET "/newhome/page2" for ::1 at 2020-05-19 21:44:34 -0700
+Processing by NewhomeController#page2 as HTML
+  Rendering newhome/page2.html.erb within layouts/application
+  Rendered newhome/_footer.html.erb (Duration: 0.0ms | Allocations: 12)
+  Rendered newhome/page2.html.erb within layouts/application (Duration: 0.3ms | Allocations: 114)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms | Allocations: 4038)
+
+
+Started GET "/newhome/page1" for ::1 at 2020-05-19 21:44:35 -0700
+Processing by NewhomeController#page1 as HTML
+  Rendering newhome/page1.html.erb within layouts/application
+  Rendered newhome/_footer.html.erb (Duration: 0.0ms | Allocations: 12)
+  Rendered newhome/page1.html.erb within layouts/application (Duration: 0.3ms | Allocations: 115)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms | Allocations: 4045)
+
+
+Started GET "/newhome/page2" for ::1 at 2020-05-19 21:44:35 -0700
+Processing by NewhomeController#page2 as HTML
+  Rendering newhome/page2.html.erb within layouts/application
+  Rendered newhome/_footer.html.erb (Duration: 0.0ms | Allocations: 12)
+  Rendered newhome/page2.html.erb within layouts/application (Duration: 0.3ms | Allocations: 114)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms | Allocations: 4037)
+
+
+Started GET "/newhome/page1" for ::1 at 2020-05-19 21:44:35 -0700
+Processing by NewhomeController#page1 as HTML
+  Rendering newhome/page1.html.erb within layouts/application
+  Rendered newhome/_footer.html.erb (Duration: 0.0ms | Allocations: 12)
+  Rendered newhome/page1.html.erb within layouts/application (Duration: 0.3ms | Allocations: 114)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms | Allocations: 4037)
+
+
+Started GET "/newhome/page2" for ::1 at 2020-05-19 21:44:36 -0700
+Processing by NewhomeController#page2 as HTML
+  Rendering newhome/page2.html.erb within layouts/application
+  Rendered newhome/_footer.html.erb (Duration: 0.0ms | Allocations: 12)
+  Rendered newhome/page2.html.erb within layouts/application (Duration: 0.2ms | Allocations: 114)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms | Allocations: 4038)
+
+
+Started GET "/newhome/page1" for ::1 at 2020-05-19 21:44:37 -0700
+Processing by NewhomeController#page1 as HTML
+  Rendering newhome/page1.html.erb within layouts/application
+  Rendered newhome/_footer.html.erb (Duration: 0.0ms | Allocations: 12)
+  Rendered newhome/page1.html.erb within layouts/application (Duration: 0.3ms | Allocations: 114)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms | Allocations: 4036)
+
+
+Started GET "/newhome/page2" for ::1 at 2020-05-19 21:44:37 -0700
+Processing by NewhomeController#page2 as HTML
+  Rendering newhome/page2.html.erb within layouts/application
+  Rendered newhome/_footer.html.erb (Duration: 0.0ms | Allocations: 12)
+  Rendered newhome/page2.html.erb within layouts/application (Duration: 0.3ms | Allocations: 114)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms | Allocations: 4036)
+
+
+Started GET "/newhome/page1" for ::1 at 2020-05-19 21:44:37 -0700
+Processing by NewhomeController#page1 as HTML
+  Rendering newhome/page1.html.erb within layouts/application
+  Rendered newhome/_footer.html.erb (Duration: 0.0ms | Allocations: 12)
+  Rendered newhome/page1.html.erb within layouts/application (Duration: 0.3ms | Allocations: 114)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 4036)
+
+
+Started GET "/newhome/page2" for ::1 at 2020-05-19 21:44:38 -0700
+Processing by NewhomeController#page2 as HTML
+  Rendering newhome/page2.html.erb within layouts/application
+  Rendered newhome/_footer.html.erb (Duration: 0.0ms | Allocations: 12)
+  Rendered newhome/page2.html.erb within layouts/application (Duration: 0.3ms | Allocations: 114)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 4035)
+
+
+Started GET "/newhome/page1" for ::1 at 2020-05-19 21:44:38 -0700
+Processing by NewhomeController#page1 as HTML
+  Rendering newhome/page1.html.erb within layouts/application
+  Rendered newhome/_footer.html.erb (Duration: 0.0ms | Allocations: 12)
+  Rendered newhome/page1.html.erb within layouts/application (Duration: 0.3ms | Allocations: 114)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms | Allocations: 4037)
+
+
+Started GET "/newhome/page2" for ::1 at 2020-05-19 21:44:39 -0700
+Processing by NewhomeController#page2 as HTML
+  Rendering newhome/page2.html.erb within layouts/application
+  Rendered newhome/_footer.html.erb (Duration: 0.0ms | Allocations: 12)
+  Rendered newhome/page2.html.erb within layouts/application (Duration: 0.3ms | Allocations: 114)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.0ms | Allocations: 4036)
+
+
+Started GET "/newhome/page1" for ::1 at 2020-05-19 21:44:39 -0700
+Processing by NewhomeController#page1 as HTML
+  Rendering newhome/page1.html.erb within layouts/application
+  Rendered newhome/_footer.html.erb (Duration: 0.0ms | Allocations: 12)
+  Rendered newhome/page1.html.erb within layouts/application (Duration: 0.3ms | Allocations: 114)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms | Allocations: 4034)
+
+
+Started GET "/newhome/page2" for ::1 at 2020-05-19 21:44:39 -0700
+Processing by NewhomeController#page2 as HTML
+  Rendering newhome/page2.html.erb within layouts/application
+  Rendered newhome/_footer.html.erb (Duration: 0.0ms | Allocations: 12)
+  Rendered newhome/page2.html.erb within layouts/application (Duration: 0.3ms | Allocations: 114)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms | Allocations: 4033)
+
+
+Started GET "/newhome/page1" for ::1 at 2020-05-19 21:44:40 -0700
+Processing by NewhomeController#page1 as HTML
+  Rendering newhome/page1.html.erb within layouts/application
+  Rendered newhome/_footer.html.erb (Duration: 0.0ms | Allocations: 12)
+  Rendered newhome/page1.html.erb within layouts/application (Duration: 0.3ms | Allocations: 114)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms | Allocations: 4041)
+
+
+Started GET "/newhome/page2" for ::1 at 2020-05-19 21:44:40 -0700
+Processing by NewhomeController#page2 as HTML
+  Rendering newhome/page2.html.erb within layouts/application
+  Rendered newhome/_footer.html.erb (Duration: 0.0ms | Allocations: 12)
+  Rendered newhome/page2.html.erb within layouts/application (Duration: 0.3ms | Allocations: 114)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms | Allocations: 4038)
+
+
+Started GET "/newhome/page1" for ::1 at 2020-05-19 21:44:40 -0700
+Processing by NewhomeController#page1 as HTML
+  Rendering newhome/page1.html.erb within layouts/application
+  Rendered newhome/_footer.html.erb (Duration: 0.0ms | Allocations: 12)
+  Rendered newhome/page1.html.erb within layouts/application (Duration: 0.3ms | Allocations: 114)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms | Allocations: 4035)
+
+
+Started GET "/newhome/page2" for ::1 at 2020-05-19 21:44:41 -0700
+Processing by NewhomeController#page2 as HTML
+  Rendering newhome/page2.html.erb within layouts/application
+  Rendered newhome/_footer.html.erb (Duration: 0.0ms | Allocations: 12)
+  Rendered newhome/page2.html.erb within layouts/application (Duration: 0.3ms | Allocations: 114)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms | Allocations: 4031)
+
+
+Started GET "/newhome/page1" for ::1 at 2020-05-19 21:44:41 -0700
+Processing by NewhomeController#page1 as HTML
+  Rendering newhome/page1.html.erb within layouts/application
+  Rendered newhome/_footer.html.erb (Duration: 0.0ms | Allocations: 12)
+  Rendered newhome/page1.html.erb within layouts/application (Duration: 0.3ms | Allocations: 114)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 4040)
+
+
+Started GET "/newhome/page2" for ::1 at 2020-05-19 21:44:42 -0700
+Processing by NewhomeController#page2 as HTML
+  Rendering newhome/page2.html.erb within layouts/application
+  Rendered newhome/_footer.html.erb (Duration: 0.0ms | Allocations: 12)
+  Rendered newhome/page2.html.erb within layouts/application (Duration: 0.3ms | Allocations: 114)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 4036)
+
+
+Started GET "/newhome/page1" for ::1 at 2020-05-19 21:45:13 -0700
+Processing by NewhomeController#page1 as HTML
+  Rendering newhome/page1.html.erb within layouts/application
+  Rendered newhome/_footer.html.erb (Duration: 0.0ms | Allocations: 12)
+  Rendered newhome/page1.html.erb within layouts/application (Duration: 0.2ms | Allocations: 114)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.0ms | Allocations: 4041)
+
+
+Started GET "/newhome/page2" for ::1 at 2020-05-19 21:45:13 -0700
+Processing by NewhomeController#page2 as HTML
+  Rendering newhome/page2.html.erb within layouts/application
+  Rendered newhome/_footer.html.erb (Duration: 0.0ms | Allocations: 12)
+  Rendered newhome/page2.html.erb within layouts/application (Duration: 0.2ms | Allocations: 114)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms | Allocations: 4041)
+
+
+Started GET "/newhome/page1" for ::1 at 2020-05-19 21:45:14 -0700
+Processing by NewhomeController#page1 as HTML
+  Rendering newhome/page1.html.erb within layouts/application
+  Rendered newhome/_footer.html.erb (Duration: 0.0ms | Allocations: 12)
+  Rendered newhome/page1.html.erb within layouts/application (Duration: 0.3ms | Allocations: 114)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 5.0ms | ActiveRecord: 0.0ms | Allocations: 4035)
+
+
+Started GET "/newhome/page2" for ::1 at 2020-05-19 21:45:14 -0700
+Processing by NewhomeController#page2 as HTML
+  Rendering newhome/page2.html.erb within layouts/application
+  Rendered newhome/_footer.html.erb (Duration: 0.0ms | Allocations: 12)
+  Rendered newhome/page2.html.erb within layouts/application (Duration: 0.2ms | Allocations: 114)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms | Allocations: 4037)
+
+
+Started GET "/newhome/page1" for ::1 at 2020-05-19 21:45:14 -0700
+Processing by NewhomeController#page1 as HTML
+  Rendering newhome/page1.html.erb within layouts/application
+  Rendered newhome/_footer.html.erb (Duration: 0.0ms | Allocations: 12)
+  Rendered newhome/page1.html.erb within layouts/application (Duration: 0.2ms | Allocations: 114)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms | Allocations: 4037)
+
+
+Started GET "/newhome/page2" for ::1 at 2020-05-19 21:45:15 -0700
+Processing by NewhomeController#page2 as HTML
+  Rendering newhome/page2.html.erb within layouts/application
+  Rendered newhome/_footer.html.erb (Duration: 0.0ms | Allocations: 12)
+  Rendered newhome/page2.html.erb within layouts/application (Duration: 0.3ms | Allocations: 114)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms | Allocations: 4034)
+
+

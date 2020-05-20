@@ -1,0 +1,3 @@
+# NOTE: This file was created with the following command
+# "rails generate migration CreateAssignment
+# description:string completion_time:integer
