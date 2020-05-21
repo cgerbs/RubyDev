@@ -10,9 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_20_152810) do
-  create_table 'assignments', force: :cascade do |t|
-    t.string 'description'
-    t.integer 'completion_time'
+ActiveRecord::Schema.define(version: 2020_05_20_204551) do
+
+  create_table "tasks", force: :cascade do |t|
+    t.string "task_name"
+    t.string "task_description"
+    t.integer "task_time"
+    t.string "checklist"
   end
+
 end
