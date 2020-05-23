@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Lab7</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<head>
+  <title>Myrailsapp</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-  <body>
-    <%= yield %>
-  </body>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+  <h1>My first rails app</h1>
+  <h4>This is written in the 'application.html.erb' FILE which is in the layouts foulder!</h4>
+  <%# this yield will output the html on page1.html.erb and page2.html.erb %>
+  <%= yield %>
+</body>
+
 </html>

@@ -1,0 +1,9 @@
+<h1>Newhome#page1</h1>
+<p>Find me in app/views/newhome/page1.html.erb</p>
+<h1>Hello this is msg is from 'page1.html.erb'!</h1>
+<p>it is <%= @time %> now</p>
+<%# <a href ="./page2">page2</a> %>
+<%# there is a better way for me to link to page2... done below %>
+<%= link_to "page2", newhome_page2_path %>
+<%= render partial: "footer", locals: {start_year: 2012} %>
+<p><i>note: this was done in part_6.2</i></p>
