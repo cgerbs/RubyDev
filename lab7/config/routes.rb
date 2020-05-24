@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :microposts
+  resources :users # this was created when I generated a scaffold around 'User'
+
   get 'newhome/page1'
   get 'newhome/page2'
   get '/singlepage', to: 'single#singlepage'
