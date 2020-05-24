@@ -218,3 +218,73 @@ puts 'the rejoined string is: '
 puts str123
 
 #puts string
+puts puts # formatting
+
+puts "\n\t\t QUESTION #4\n\n"
+
+# This question is asking us to re-implement two methods in the Hash class
+# First method to reimplement = merge ( ex h1.merge(h2) OR h1.merge(h2){|key, val1, val2| val2-val1} )
+# Second method to reimplement = merge!()... this is the 'dangerous' version of merge
+
+h1 = { 'a' => 100, 'b' => 200 }
+h2 = { 'b' => 254, 'c' => 300 }
+
+h3 = h1.merge(h2)
+puts h3
+#puts h1
+h4 = h1.merge(h2) { |key, val1, val2| val2 - val1 }
+puts h4
+#puts h1
+puts
+puts 'now using merge!()...'
+puts
+c1 = { 'a' => 100, 'b' => 200 }
+c2 = { 'b' => 254, 'c' => 300 }
+c1.merge!(c2)
+puts c1
+h1.merge!(h2) { |key, val1, val2| val2 - val1 }
+puts h1
+c2.merge!(h1)
+puts c2
+
+puts puts # formating
+
+puts "\n\t\t QUESTION #5\n\n"
+require 'erb'
+class TodoList
+  attr_accessor :template, :todo_list
+  def initialize(template, todo_list)
+    @list = todo_list
+    @template = template
+  end
+
+  def render
+    render_obj = ERB.new(template)
+    render_obj.result(binding)
+  end
+end
+
+html_stuff = <<TODO
+<html>
+    <body>
+        <h1>TodoList</h1>
+        <ul>
+        <% for todo in @list %>
+            <li><%= todo %></li>
+        <% end %>
+        </ul>
+    </body>
+</html>
+TODO
+
+list = ['clean room', 'do homework', 'work on personal project']
+display_page = TodoList.new(html_stuff, list)
+html_for_page = display_page.render
+puts html_for_page
+
+puts "\n\t\t QUESTION #6\n\n"
+
+content = File.readlines('advisor_student_convo.txt')
+#puts content # displays whole document
+isAdvisor = false
+content.each { |line| puts line }
