@@ -6,10 +6,12 @@
 
 puts "\n\t\t QUESTION #1\n\n"
 # in questions one we will create a function that takes in a string to search within, and possibly another string that represents the search term
+
 #   IF there is NOT search term given, the function should return every unique word and the number of times it occurs
 #   IF there IS a search term provided, the function should only return the number of occurances of the searchterm in the given string
 
 # NOTE: string was provided in the assignment
+
 str =
   'Facebook and its founder must release documents and electronic correspondence to a defense lawyer whose client has fled from criminal charges that he falsely claimed a majority ownership in the social media giant, a federal judge said Friday.'
 
@@ -17,13 +19,18 @@ str =
 
 def count_occurances(str, search_term = '')
   local_str = str.downcase.split(/\W+/) # now string should be ready for comparison
+
   # puts local_str
   # puts
   result = {} # hash table to return results
 
   if search_term == '' # no search term param passed
-    local_str.each do |word|
-      result[word] = result.key? word ? result[word] + 1 : 1
+    local_str.uniq.each do |word|
+      # result[word] = result.key? word ? result[word] + 1 : 1
+      result[
+        word
+      ] =
+        local_str.select { |num| num == word }.length
     end
     puts result
   else
@@ -105,45 +112,109 @@ puts puts
 puts "\n\t\t QUESTION #3\n\n"
 
 # need to write a class that allows me to compress a string and a method that will return the og string
+
 # The class should include:
 # -compressed string (based on string given as input when creating new instance of  the class)
+
 # -an accompaning array of integers, that represents the original string, based on # of word
+
 # ex. og string "i want to go on a walk do you want to go on a walk"
+
 # compress string "i want to go on a walk do you"
+
 # i = 0, want = 2, to = 3, go = 4, on = 5, a = 6, walk = 7, do = 8, you = 9
 # int array ->    [0 2 3 4 5 6 7 8 9 2 3 4 5 6 7]
 
 # 1. going to use '.uniq' method to compress og string.. this will be done in the class method i believe
+
 # 2. use the compressed string to number to words
+
 # 3. used the numbered words to create the int array that reps og string
+
 # 4. @ end of class method set the class attributes to the 'int array' and 'compressed string' that were calculated
+
 # 5. write method to compute og string again.. this shouldnt be to hard... method will need access to class attributes
 
 class CompressString
   attr_accessor :numArr, :compressedString
 
   def initialize(og_string: '')
+    #puts og_string
     self.compressedString = compressStr(og_string)
-    puts self.compressedString[1] # -> 'love'
+    #puts self.compressedString[1] # -> 'love'
     self.numArr = generate_arr(og_string, self.compressedString)
+    #puts self.numArr
   end
 
   def compressStr(string)
     new_str = ((string).split.uniq)
-    # puts new_str
+
+    #puts new_str
     new_str # returning this string
   end
 
   def generate_arr(og_str, compressed_arr)
+    int_word_arr = []
+    og_str_new = ((og_str).split)
+    try = generate_mapping(compressed_arr)
+    #puts try
+    count = 0
+    og_str_new.each do |word1|
+      int_word_arr[count] = try[word1]
+      count += 1
+    end
+    int_word_arr
+  end
+
+  def generate_mapping(compressed_arr)
     int_arr = []
     i = 0
+    compressed_arr.to_a
+    compressed_arr.map(&:to_sym)
+    #puts compressed_arr
     compressed_arr.each do |word|
-      puts word
-      puts i
+      int_arr[i] = i
       i += 1
     end
+
+    Hash[compressed_arr.zip int_arr]
+  end
+
+  # I had to create another mapping function bc I needed the mappings to be reversed for 'regenString' method
+  def generate_mapping1(compressed_arr)
+    int_arr = []
+    i = 0
+    compressed_arr.to_a
+    compressed_arr.map(&:to_sym)
+    #puts compressed_arr
+    compressed_arr.each do |word|
+      int_arr[i] = i
+      i += 1
+    end
+
+    Hash[int_arr.zip compressed_arr]
+  end
+
+  def regenString
+    og_str_regen = []
+    word_mappings = generate_mapping1(compressedString)
+    #puts word_mappings
+    #puts word_mappings[1].to_s
+    i = 0
+    numArr.each do |word_number|
+      og_str_regen[i] = word_mappings[word_number]
+      i += 1
+    end
+
+    ret_str = og_str_regen.join(' ').to_s
+    #puts ret_str
   end
 end
 
 string = CompressString.new(og_string: 'I love you but do you love me')
+
+str123 = string.regenString
+puts 'the rejoined string is: '
+puts str123
+
 #puts string
